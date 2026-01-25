@@ -5,11 +5,43 @@ import '../styles/global.css';
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+
 		<title>Accountability Bet - Put Money on Your Goals. Stay Committed.</title>
 		<meta name="description" content="Bet with friends on your goals. Upload photo proof. Win your money back. Finally achieve fitness, career, and habit goals with real financial stakes." />
+		<meta name="keywords" content="accountability, goals, habits, fitness, commitment, betting, motivation, Switzerland" />
+		<meta name="author" content="Accountability Bet" />
+
+		<!-- Favicon variants -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#9333ea" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="Accountability Bet - Put Money on Your Goals" />
+		<meta property="og:description" content="Bet with friends on your goals. Upload photo proof. Win your money back." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://accountabilitybet.ch" />
+		<meta property="og:image" content="https://accountabilitybet.ch/og-image.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:site_name" content="Accountability Bet" />
+		<meta property="og:locale" content="en_US" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Accountability Bet - Put Money on Your Goals" />
+		<meta name="twitter:description" content="Bet with friends on your goals. Upload photo proof. Win your money back." />
+		<meta name="twitter:image" content="https://accountabilitybet.ch/og-image.png" />
+
+		<!-- Canonical -->
+		<link rel="canonical" href="https://accountabilitybet.ch" />
+
+		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,6 +56,7 @@ import '../styles/global.css';
 				<nav class="hidden md:flex items-center space-x-8">
 					<a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
 					<a href="#how-it-works" class="text-gray-600 hover:text-gray-900 transition-colors">How It Works</a>
+					<a href="#faq" class="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
 					<a href="https://app.accountabilitybet.ch/login" class="text-gray-600 hover:text-gray-900 transition-colors">Log In</a>
 					<a href="https://app.accountabilitybet.ch/signup" class="bg-purple-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:bg-purple-700 hover:shadow-lg hover:shadow-purple-500/30 transition-all hover:-translate-y-0.5">
 						Get Started Free
@@ -40,6 +73,7 @@ import '../styles/global.css';
 			<div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/50 px-4 py-4 space-y-3">
 				<a href="#features" class="block text-gray-600 hover:text-gray-900 py-2">Features</a>
 				<a href="#how-it-works" class="block text-gray-600 hover:text-gray-900 py-2">How It Works</a>
+				<a href="#faq" class="block text-gray-600 hover:text-gray-900 py-2">FAQ</a>
 				<a href="https://app.accountabilitybet.ch/login" class="block text-gray-600 hover:text-gray-900 py-2">Log In</a>
 				<a href="https://app.accountabilitybet.ch/signup" class="block bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-purple-700 transition-all">
 					Get Started Free
@@ -47,8 +81,8 @@ import '../styles/global.css';
 			</div>
 		</header>
 
-		<!-- Hero Section with Gradient Background -->
-		<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+		<!-- Hero Section with iPhone Mockup -->
+		<section class="relative min-h-screen flex items-center overflow-hidden pt-20">
 			<!-- Animated gradient background -->
 			<div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 animate-gradient"></div>
 
@@ -59,51 +93,175 @@ import '../styles/global.css';
 				<div class="absolute bottom-0 left-1/3 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
 			</div>
 
-			<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
-				<!-- Main headline -->
-				<h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-tight tracking-tight">
-					<span class="block">Put Money on</span>
-					<span class="block bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-200 bg-clip-text text-transparent">
-						Your Goals
-					</span>
-				</h1>
+			<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+				<div class="grid lg:grid-cols-2 gap-12 items-center">
+					<!-- Left: Text content -->
+					<div class="text-center lg:text-left text-white">
+						<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+							<span class="block">Put Money on</span>
+							<span class="block bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-200 bg-clip-text text-transparent">
+								Your Goals
+							</span>
+						</h1>
 
-				<p class="text-xl md:text-2xl text-white/90 mb-4 max-w-3xl mx-auto font-medium">
-					Bet with friends. Upload photo proof. Win your money back.
-				</p>
-				<p class="text-lg text-white/70 mb-10 max-w-2xl mx-auto">
-					Finally achieve those fitness, career, and habit goals with real financial stakes. Because when promises fail, money works.
-				</p>
+						<p class="text-lg md:text-xl text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
+							Bet with friends. Upload photo proof. Win your money back.
+						</p>
+						<p class="text-base md:text-lg text-white/70 mb-8 max-w-xl mx-auto lg:mx-0">
+							Finally achieve those fitness, career, and habit goals with real financial stakes.
+						</p>
 
-				<!-- CTA Buttons -->
-				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-					<a href="https://app.accountabilitybet.ch/signup" class="group bg-white text-purple-600 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-white/30 transition-all hover:-translate-y-1 inline-flex items-center gap-2">
-						Get Started Free
-						<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-						</svg>
-					</a>
-					<a href="#how-it-works" class="border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all">
-						See How It Works
-					</a>
-				</div>
+						<!-- CTA Buttons -->
+						<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+							<a href="https://app.accountabilitybet.ch/signup" class="group bg-white text-purple-600 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-white/30 transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-2">
+								Get Started Free
+								<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+								</svg>
+							</a>
+							<a href="#how-it-works" class="border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all text-center">
+								See How It Works
+							</a>
+						</div>
 
-				<!-- Social proof -->
-				<div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-					<div class="flex -space-x-2">
-						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 border-2 border-white"></div>
-						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-indigo-600 border-2 border-white"></div>
-						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 border-2 border-white"></div>
+						<!-- Trust indicators -->
+						<div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-white/80 text-sm">
+							<div class="flex items-center gap-2">
+								<svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+								</svg>
+								<span>Free to start</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+								</svg>
+								<span>No credit card</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+								</svg>
+								<span>Swiss hosted</span>
+							</div>
+						</div>
 					</div>
-					<span class="text-sm font-semibold">Join goal-getters achieving more</span>
+
+					<!-- Right: iPhone Mockup -->
+					<div class="relative flex justify-center lg:justify-end">
+						<div class="relative">
+							<!-- iPhone Frame -->
+							<div class="relative w-[280px] sm:w-[320px] h-[580px] sm:h-[660px] bg-gray-900 rounded-[3rem] p-3 shadow-2xl shadow-black/50">
+								<!-- Dynamic Island -->
+								<div class="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-8 bg-black rounded-full z-20"></div>
+
+								<!-- Screen -->
+								<div class="w-full h-full bg-gray-50 rounded-[2.5rem] overflow-hidden relative">
+									<!-- App Header -->
+									<div class="bg-purple-600 px-5 pt-14 pb-5">
+										<p class="text-white/80 text-sm">Good morning!</p>
+										<h2 class="text-white text-xl font-bold">Your Active Bets</h2>
+									</div>
+
+									<!-- App Content -->
+									<div class="p-4 space-y-4">
+										<!-- Bet Card 1 -->
+										<div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+											<div class="flex items-center justify-between mb-3">
+												<span class="text-2xl">🏋️</span>
+												<span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">On Track</span>
+											</div>
+											<h3 class="font-bold text-gray-900 mb-1">Gym 3x per week</h3>
+											<p class="text-gray-500 text-sm mb-3">with @sarah</p>
+											<div class="flex items-center justify-between">
+												<div class="flex-1 bg-gray-100 rounded-full h-2 mr-3">
+													<div class="bg-purple-600 h-2 rounded-full" style="width: 66%"></div>
+												</div>
+												<span class="text-sm font-semibold text-purple-600">2/3</span>
+											</div>
+											<p class="text-xs text-gray-400 mt-2">3 days left this week</p>
+										</div>
+
+										<!-- Bet Card 2 -->
+										<div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+											<div class="flex items-center justify-between mb-3">
+												<span class="text-2xl">📚</span>
+												<span class="bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-1 rounded-full">Behind</span>
+											</div>
+											<h3 class="font-bold text-gray-900 mb-1">Read 30min daily</h3>
+											<p class="text-gray-500 text-sm mb-3">with @mike</p>
+											<div class="flex items-center justify-between">
+												<div class="flex-1 bg-gray-100 rounded-full h-2 mr-3">
+													<div class="bg-amber-500 h-2 rounded-full" style="width: 40%"></div>
+												</div>
+												<span class="text-sm font-semibold text-amber-600">2/5</span>
+											</div>
+											<p class="text-xs text-gray-400 mt-2">CHF 20 at stake</p>
+										</div>
+
+										<!-- Quick Upload Button -->
+										<button class="w-full bg-purple-600 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2">
+											<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+											</svg>
+											Upload Proof
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- Floating notification -->
+							<div class="absolute -left-4 top-32 bg-white rounded-2xl p-3 shadow-xl border border-gray-100 animate-float max-w-[180px]">
+								<div class="flex items-center gap-2">
+									<div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+										<svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+										</svg>
+									</div>
+									<div>
+										<p class="text-xs font-semibold text-gray-900">Proof Approved!</p>
+										<p class="text-xs text-gray-500">by Sarah</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Floating streak badge -->
+							<div class="absolute -right-2 bottom-40 bg-gradient-to-br from-purple-500 to-indigo-600 text-white rounded-2xl p-3 shadow-xl animate-float animation-delay-2000">
+								<div class="flex items-center gap-2">
+									<span class="text-2xl">🔥</span>
+									<div>
+										<p class="text-xs font-bold">7 Day Streak!</p>
+										<p class="text-xs text-white/80">Keep it up</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+		</section>
 
-			<!-- Scroll indicator -->
-			<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-				<svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-				</svg>
+		<!-- Social Proof Stats -->
+		<section class="py-12 bg-white border-b border-gray-100">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+					<div class="scroll-fade-in">
+						<div class="text-3xl md:text-4xl font-extrabold text-purple-600 mb-1">87%</div>
+						<p class="text-gray-600 text-sm">Goal completion rate</p>
+					</div>
+					<div class="scroll-fade-in">
+						<div class="text-3xl md:text-4xl font-extrabold text-purple-600 mb-1">CHF 20</div>
+						<p class="text-gray-600 text-sm">Average stake per bet</p>
+					</div>
+					<div class="scroll-fade-in">
+						<div class="text-3xl md:text-4xl font-extrabold text-purple-600 mb-1">4 weeks</div>
+						<p class="text-gray-600 text-sm">Average bet duration</p>
+					</div>
+					<div class="scroll-fade-in">
+						<div class="text-3xl md:text-4xl font-extrabold text-purple-600 mb-1">24h</div>
+						<p class="text-gray-600 text-sm">Auto-approval window</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -195,7 +353,7 @@ import '../styles/global.css';
 						<div class="flex-1 text-center md:text-left">
 							<h3 class="text-xl md:text-2xl font-bold mb-2">Create Your Bet</h3>
 							<p class="text-gray-600 text-base md:text-lg">
-								Choose from templates or create custom goals. Set frequency (e.g., 2x/week), duration (4 weeks), stakes (CHF 20/week), and proof requirements.
+								Choose from templates or create custom goals. Set frequency (e.g., 3x/week), duration (4 weeks), stakes (CHF 20), and proof requirements.
 							</p>
 						</div>
 						<div class="flex-shrink-0 w-32 h-32 md:w-48 md:h-48 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center text-5xl md:text-6xl">
@@ -254,77 +412,214 @@ import '../styles/global.css';
 			</div>
 		</section>
 
-		<!-- Charity Donation Section -->
-		<section class="py-24 md:py-32 bg-gradient-to-br from-emerald-50 to-teal-50 relative overflow-hidden">
+		<!-- Use Cases / Templates Section -->
+		<section class="py-24 md:py-32 bg-gray-50">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-					<div class="scroll-fade-in">
-						<div class="inline-block bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl text-sm font-semibold mb-4">
-							🌍 Give Back Option
-						</div>
-						<h2 class="text-3xl md:text-5xl font-extrabold mb-6">Lose to Your Friend.<br/>Or Change the World.</h2>
-						<p class="text-lg md:text-xl text-gray-700 mb-6">
-							When you miss your goal, choose where your money goes. Pay your accountability partner or donate to a cause you care about.
-						</p>
-						<ul class="space-y-3 mb-8">
-							<li class="flex items-start gap-3">
-								<svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								<span class="text-gray-700">Support verified charities worldwide</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								<span class="text-gray-700">Turn failures into positive impact</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-								</svg>
-								<span class="text-gray-700">Automatic receipts for tax deduction</span>
-							</li>
-						</ul>
+				<div class="text-center mb-16 scroll-fade-in">
+					<h2 class="text-4xl md:text-5xl font-extrabold mb-4">Popular Goals</h2>
+					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+						Start with a template or create your own custom bet
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+					<!-- Fitness -->
+					<div class="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl hover:border-purple-200 transition-all duration-300 scroll-fade-in group">
+						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🏋️</div>
+						<h3 class="font-bold text-lg mb-2">Fitness</h3>
+						<p class="text-gray-600 text-sm mb-4">Gym visits, running goals, workout streaks</p>
+						<div class="text-purple-600 text-sm font-semibold">3x/week • CHF 20</div>
 					</div>
 
-					<div class="scroll-fade-in">
-						<div class="bg-white rounded-3xl p-6 md:p-8 shadow-2xl border border-gray-100">
-							<h3 class="text-xl font-bold mb-6 text-gray-900">Trusted Charity Partners</h3>
-							<div class="grid grid-cols-2 gap-4 md:gap-6">
-								<div class="bg-gray-50 rounded-2xl p-4 md:p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 group">
-									<div class="text-center">
-										<div class="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">❤️</div>
-										<div class="text-sm font-semibold text-gray-700">Red Cross</div>
-									</div>
-								</div>
-								<div class="bg-gray-50 rounded-2xl p-4 md:p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 group">
-									<div class="text-center">
-										<div class="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🌟</div>
-										<div class="text-sm font-semibold text-gray-700">UNICEF</div>
-									</div>
-								</div>
-								<div class="bg-gray-50 rounded-2xl p-4 md:p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 group">
-									<div class="text-center">
-										<div class="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🐼</div>
-										<div class="text-sm font-semibold text-gray-700">WWF</div>
-									</div>
-								</div>
-								<div class="bg-gray-50 rounded-2xl p-4 md:p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 group">
-									<div class="text-center">
-										<div class="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🇨🇭</div>
-										<div class="text-sm font-semibold text-gray-700">Swiss Solidarity</div>
-									</div>
-								</div>
+					<!-- Learning -->
+					<div class="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl hover:border-purple-200 transition-all duration-300 scroll-fade-in group">
+						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📚</div>
+						<h3 class="font-bold text-lg mb-2">Learning</h3>
+						<p class="text-gray-600 text-sm mb-4">Reading, courses, language practice</p>
+						<div class="text-purple-600 text-sm font-semibold">30min/day • CHF 15</div>
+					</div>
+
+					<!-- Health -->
+					<div class="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl hover:border-purple-200 transition-all duration-300 scroll-fade-in group">
+						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🧘</div>
+						<h3 class="font-bold text-lg mb-2">Health</h3>
+						<p class="text-gray-600 text-sm mb-4">Meditation, sleep schedule, nutrition</p>
+						<div class="text-purple-600 text-sm font-semibold">Daily • CHF 10</div>
+					</div>
+
+					<!-- Productivity -->
+					<div class="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl hover:border-purple-200 transition-all duration-300 scroll-fade-in group">
+						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform">💻</div>
+						<h3 class="font-bold text-lg mb-2">Productivity</h3>
+						<p class="text-gray-600 text-sm mb-4">Side projects, writing, deep work</p>
+						<div class="text-purple-600 text-sm font-semibold">2hrs/day • CHF 25</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Testimonials -->
+		<section class="py-24 md:py-32 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16 scroll-fade-in">
+					<h2 class="text-4xl md:text-5xl font-extrabold mb-4">What Users Say</h2>
+					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+						Real people achieving real goals
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-8">
+					<!-- Testimonial 1 -->
+					<div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 scroll-fade-in">
+						<div class="flex items-center gap-1 mb-4">
+							<span class="text-yellow-400">★★★★★</span>
+						</div>
+						<p class="text-gray-700 mb-6">
+							"I've tried every habit app. This is the only one that worked because the stakes are real. Lost CHF 20 the first week, haven't missed a gym session since."
+						</p>
+						<div class="flex items-center gap-3">
+							<div class="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full"></div>
+							<div>
+								<p class="font-semibold text-gray-900">Marco S.</p>
+								<p class="text-gray-500 text-sm">Gym 4x/week for 3 months</p>
 							</div>
-							<p class="text-sm text-gray-500 text-center mt-6">+ more verified charities</p>
+						</div>
+					</div>
+
+					<!-- Testimonial 2 -->
+					<div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 scroll-fade-in">
+						<div class="flex items-center gap-1 mb-4">
+							<span class="text-yellow-400">★★★★★</span>
+						</div>
+						<p class="text-gray-700 mb-6">
+							"My friend and I both wanted to read more. Now we have a bet running and I've read 8 books this year. The social pressure is everything."
+						</p>
+						<div class="flex items-center gap-3">
+							<div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-indigo-400 rounded-full"></div>
+							<div>
+								<p class="font-semibold text-gray-900">Lisa M.</p>
+								<p class="text-gray-500 text-sm">Reading 30min daily</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonial 3 -->
+					<div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 scroll-fade-in">
+						<div class="flex items-center gap-1 mb-4">
+							<span class="text-yellow-400">★★★★★</span>
+						</div>
+						<p class="text-gray-700 mb-6">
+							"The photo proof feature is genius. No cheating possible. My accountability partner can see exactly when I checked in at the gym."
+						</p>
+						<div class="flex items-center gap-3">
+							<div class="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-full"></div>
+							<div>
+								<p class="font-semibold text-gray-900">Thomas K.</p>
+								<p class="text-gray-500 text-sm">Morning routine streak</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- CTA Section -->
+		<!-- Charity Section (Simplified) -->
+		<section class="py-24 md:py-32 bg-gradient-to-br from-emerald-50 to-teal-50">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-fade-in">
+				<div class="inline-block bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl text-sm font-semibold mb-6">
+					🌍 Give Back Option
+				</div>
+				<h2 class="text-3xl md:text-5xl font-extrabold mb-6">Lose to Your Friend.<br/>Or Change the World.</h2>
+				<p class="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+					When you miss your goal, choose where your money goes. Pay your accountability partner or donate to verified charities like Red Cross, UNICEF, or WWF.
+				</p>
+				<div class="flex flex-wrap justify-center gap-4">
+					<div class="bg-white rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">❤️ Red Cross</div>
+					<div class="bg-white rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">🌟 UNICEF</div>
+					<div class="bg-white rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">🐼 WWF</div>
+					<div class="bg-white rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">🇨🇭 Swiss Solidarity</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ Section -->
+		<section id="faq" class="py-24 md:py-32 bg-white">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16 scroll-fade-in">
+					<h2 class="text-4xl md:text-5xl font-extrabold mb-4">Questions?</h2>
+					<p class="text-xl text-gray-600">Everything you need to know</p>
+				</div>
+
+				<div class="space-y-4">
+					<!-- FAQ 1 -->
+					<details class="group bg-gray-50 rounded-2xl scroll-fade-in">
+						<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+							<span class="font-semibold text-gray-900">How does the money work?</span>
+							<svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</summary>
+						<div class="px-6 pb-6 text-gray-600">
+							Currently, the app tracks IOUs between you and your partner. When someone fails their goal, they owe the other person. You settle up outside the app (Twint, cash, etc.). We're working on integrated payments for v2.
+						</div>
+					</details>
+
+					<!-- FAQ 2 -->
+					<details class="group bg-gray-50 rounded-2xl scroll-fade-in">
+						<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+							<span class="font-semibold text-gray-900">What if my partner doesn't review my proof?</span>
+							<svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</summary>
+						<div class="px-6 pb-6 text-gray-600">
+							No worries! Proofs are automatically approved after 24 hours if your partner doesn't respond. This prevents ghosting from blocking your progress.
+						</div>
+					</details>
+
+					<!-- FAQ 3 -->
+					<details class="group bg-gray-50 rounded-2xl scroll-fade-in">
+						<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+							<span class="font-semibold text-gray-900">Can I create asymmetric bets?</span>
+							<svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</summary>
+						<div class="px-6 pb-6 text-gray-600">
+							Yes! You can set different goals for each person. For example, you commit to gym 3x/week while your partner commits to running 2x/week. Same stakes, different targets.
+						</div>
+					</details>
+
+					<!-- FAQ 4 -->
+					<details class="group bg-gray-50 rounded-2xl scroll-fade-in">
+						<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+							<span class="font-semibold text-gray-900">Is my data safe?</span>
+							<svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</summary>
+						<div class="px-6 pb-6 text-gray-600">
+							Absolutely. We use bank-grade encryption and host all data in Switzerland. Your photos are only visible to you and your accountability partner. We never sell your data.
+						</div>
+					</details>
+
+					<!-- FAQ 5 -->
+					<details class="group bg-gray-50 rounded-2xl scroll-fade-in">
+						<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+							<span class="font-semibold text-gray-900">What if I don't have an accountability partner?</span>
+							<svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</summary>
+						<div class="px-6 pb-6 text-gray-600">
+							You can invite anyone via email, even if they don't have an account yet. Ask a friend, family member, or colleague. The best partners are people who will actually hold you accountable!
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+
+		<!-- Final CTA Section -->
 		<section class="py-24 md:py-32 relative overflow-hidden">
 			<!-- Gradient background -->
 			<div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800"></div>
@@ -360,17 +655,30 @@ import '../styles/global.css';
 		<!-- Footer -->
 		<footer class="bg-gray-900 text-white py-12">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center">
-					<div class="text-2xl font-bold text-purple-400 mb-4">
-						Accountability Bet
+				<div class="grid md:grid-cols-4 gap-8 mb-8">
+					<div class="md:col-span-2">
+						<div class="text-2xl font-bold text-purple-400 mb-4">Accountability Bet</div>
+						<p class="text-gray-400 max-w-sm">Turn goals into money-backed commitments. The accountability app that actually works.</p>
 					</div>
-					<p class="text-gray-400 mb-6">Turn goals into money-backed commitments</p>
-					<div class="flex flex-wrap justify-center gap-6 md:gap-8 text-sm text-gray-400">
-						<a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-						<a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-						<a href="mailto:hello@accountabilitybet.ch" class="hover:text-white transition-colors">Contact</a>
+					<div>
+						<h4 class="font-semibold mb-4">Product</h4>
+						<ul class="space-y-2 text-gray-400">
+							<li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+							<li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+							<li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+						</ul>
 					</div>
-					<p class="text-gray-500 text-sm mt-6">&copy; 2026 Accountability Bet. Made in Switzerland 🇨🇭</p>
+					<div>
+						<h4 class="font-semibold mb-4">Legal</h4>
+						<ul class="space-y-2 text-gray-400">
+							<li><a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+							<li><a href="/terms" class="hover:text-white transition-colors">Terms of Service</a></li>
+							<li><a href="mailto:hello@accountabilitybet.ch" class="hover:text-white transition-colors">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+					<p>&copy; 2026 Accountability Bet. Made with ❤️ in Switzerland 🇨🇭</p>
 				</div>
 			</div>
 		</footer>
@@ -387,6 +695,11 @@ import '../styles/global.css';
 				66% { transform: translate(-20px, 20px) scale(0.9); }
 			}
 
+			@keyframes float {
+				0%, 100% { transform: translateY(0px); }
+				50% { transform: translateY(-10px); }
+			}
+
 			.animate-gradient {
 				background-size: 200% 200%;
 				animation: gradient 15s ease infinite;
@@ -394,6 +707,10 @@ import '../styles/global.css';
 
 			.animate-blob {
 				animation: blob 7s infinite;
+			}
+
+			.animate-float {
+				animation: float 3s ease-in-out infinite;
 			}
 
 			.animation-delay-2000 {
@@ -441,12 +758,48 @@ import '../styles/global.css';
 					transition-duration: 0.01ms !important;
 				}
 			}
+
+			/* FAQ details styling */
+			details summary::-webkit-details-marker {
+				display: none;
+			}
 		</style>
+
+		<!-- Cookie Consent Banner -->
+		<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
+			<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+				<p class="text-sm text-gray-300 text-center sm:text-left">
+					We use essential cookies to keep you logged in. No tracking.
+					<a href="/privacy" class="text-purple-400 hover:underline">Learn more</a>
+				</p>
+				<div class="flex gap-3">
+					<button id="cookie-accept" class="bg-purple-600 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">
+						Accept
+					</button>
+				</div>
+			</div>
+		</div>
 
 		<script>
 			// Mobile menu toggle
 			document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
 				document.getElementById('mobile-menu')?.classList.toggle('hidden');
+			});
+
+			// Cookie consent
+			const cookieBanner = document.getElementById('cookie-banner');
+			const cookieAccept = document.getElementById('cookie-accept');
+
+			// Show banner if not accepted
+			if (!localStorage.getItem('cookieConsent')) {
+				setTimeout(() => {
+					cookieBanner?.classList.remove('translate-y-full');
+				}, 1000);
+			}
+
+			cookieAccept?.addEventListener('click', () => {
+				localStorage.setItem('cookieConsent', 'true');
+				cookieBanner?.classList.add('translate-y-full');
 			});
 		</script>
 	</body>

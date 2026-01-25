@@ -1,0 +1,10 @@
+# Accountability Bet - robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://accountabilitybet.ch/sitemap.xml
+
+# Disallow admin/app routes (if any)
+Disallow: /api/
