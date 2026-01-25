@@ -164,13 +164,13 @@ import WaitlistForm from '../components/WaitlistForm';
 						<p class="text-sm text-gray-600">Bank-grade encryption • Swiss data hosting • No hidden fees</p>
 					</div>
 
-					<!-- Manual IOU -->
-					<div class="md:col-span-3 md:row-span-1 bg-white rounded-3xl p-6 border border-gray-200 hover:shadow-xl transition-all scroll-fade-in glass-card">
+					<!-- Charity Option -->
+					<div class="md:col-span-3 md:row-span-1 bg-gradient-to-br from-green-500 to-teal-500 rounded-3xl p-6 text-white hover:shadow-xl transition-all scroll-fade-in glass-card">
 						<div class="flex items-center gap-3 mb-3">
-							<div class="text-3xl">📊</div>
-							<h3 class="text-lg font-bold">Simple IOU Tracking</h3>
+							<div class="text-3xl">💚</div>
+							<h3 class="text-lg font-bold">Pay Friend or Charity</h3>
 						</div>
-						<p class="text-sm text-gray-600">v1 focuses on accountability. Manual payment tracking between friends.</p>
+						<p class="text-sm text-white/90">Choose where your money goes: accountability partner or donate to verified charities.</p>
 					</div>
 				</div>
 			</div>
@@ -241,13 +241,204 @@ import WaitlistForm from '../components/WaitlistForm';
 						<div class="flex-1 md:text-right">
 							<h3 class="text-2xl font-bold mb-2">Settle & Celebrate</h3>
 							<p class="text-gray-600 text-lg">
-								Week ends, app calculates who met their commitment. Failed weeks = you owe. Track IOUs and settle manually. Met your goals? Keep your money and your momentum!
+								Week ends, app calculates who met their commitment. Failed weeks? Pay your partner or donate to charity. Met your goals? Keep your money and your momentum!
 							</p>
 						</div>
 						<div class="flex-shrink-0 w-48 h-48 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center text-6xl">
 							🎉
 						</div>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Charity Donation Section -->
+		<section class="py-32 bg-gradient-to-br from-green-50 to-teal-50 relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid md:grid-cols-2 gap-12 items-center">
+					<div class="scroll-fade-in">
+						<div class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+							🌍 Give Back Option
+						</div>
+						<h2 class="text-5xl font-black mb-6">Lose to Your Friend.<br/>Or Donate to Change the World.</h2>
+						<p class="text-xl text-gray-700 mb-6">
+							When you miss your goal, choose where your money goes. Pay your accountability partner or donate to a cause you care about.
+						</p>
+						<ul class="space-y-3 mb-8">
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span class="text-gray-700">Support verified charities worldwide</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span class="text-gray-700">Turn failures into positive impact</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span class="text-gray-700">Automatic receipts for tax deduction</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="scroll-fade-in">
+						<div class="bg-white rounded-3xl p-8 shadow-2xl border border-gray-200">
+							<h3 class="text-xl font-bold mb-6 text-gray-900">Trusted Charity Partners</h3>
+							<div class="grid grid-cols-2 gap-6">
+								<!-- Red Cross -->
+								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+									<div class="text-center">
+										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">❤️</div>
+										<div class="text-sm font-semibold text-gray-700">Red Cross</div>
+									</div>
+								</div>
+								<!-- UNICEF -->
+								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+									<div class="text-center">
+										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🌟</div>
+										<div class="text-sm font-semibold text-gray-700">UNICEF</div>
+									</div>
+								</div>
+								<!-- WWF -->
+								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+									<div class="text-center">
+										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🐼</div>
+										<div class="text-sm font-semibold text-gray-700">WWF</div>
+									</div>
+								</div>
+								<!-- Doctors Without Borders -->
+								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+									<div class="text-center">
+										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🏥</div>
+										<div class="text-sm font-semibold text-gray-700">MSF</div>
+									</div>
+								</div>
+								<!-- Save the Children -->
+								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+									<div class="text-center">
+										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">👶</div>
+										<div class="text-sm font-semibold text-gray-700">Save the Children</div>
+									</div>
+								</div>
+								<!-- Local Charities -->
+								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+									<div class="text-center">
+										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🇨🇭</div>
+										<div class="text-sm font-semibold text-gray-700">Swiss Solidarity</div>
+									</div>
+								</div>
+							</div>
+							<p class="text-sm text-gray-500 text-center mt-6">+ 50 more verified charities</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Future Integrations Section -->
+		<section class="py-32 bg-white relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16 scroll-fade-in">
+					<div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+						🚀 Coming Soon
+					</div>
+					<h2 class="text-5xl font-black mb-4">Seamless Integrations</h2>
+					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+						Auto-verify your progress with your favorite fitness and productivity apps. No manual uploads needed.
+					</p>
+				</div>
+
+				<!-- Integration Cards -->
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+					<!-- Strava -->
+					<div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
+						<div class="w-16 h-16 bg-orange-500 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold group-hover:rotate-6 transition-transform">
+							S
+						</div>
+						<h3 class="font-bold text-gray-900 mb-1">Strava</h3>
+						<p class="text-sm text-gray-600">Running & Cycling</p>
+					</div>
+
+					<!-- Apple Health -->
+					<div class="bg-gradient-to-br from-pink-50 to-red-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
+						<div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-500 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl group-hover:rotate-6 transition-transform">
+
+						</div>
+						<h3 class="font-bold text-gray-900 mb-1">Apple Health</h3>
+						<p class="text-sm text-gray-600">Activity & Workouts</p>
+					</div>
+
+					<!-- Google Fit -->
+					<div class="bg-gradient-to-br from-blue-50 to-green-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
+						<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl group-hover:rotate-6 transition-transform">
+							G
+						</div>
+						<h3 class="font-bold text-gray-900 mb-1">Google Fit</h3>
+						<p class="text-sm text-gray-600">Fitness Tracking</p>
+					</div>
+
+					<!-- MyFitnessPal -->
+					<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
+						<div class="w-16 h-16 bg-blue-600 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-xl font-bold group-hover:rotate-6 transition-transform">
+							MFP
+						</div>
+						<h3 class="font-bold text-gray-900 mb-1">MyFitnessPal</h3>
+						<p class="text-sm text-gray-600">Nutrition</p>
+					</div>
+
+					<!-- Fitbit -->
+					<div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
+						<div class="w-16 h-16 bg-teal-500 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl group-hover:rotate-6 transition-transform">
+							●●
+						</div>
+						<h3 class="font-bold text-gray-900 mb-1">Fitbit</h3>
+						<p class="text-sm text-gray-600">Steps & Sleep</p>
+					</div>
+
+					<!-- Garmin -->
+					<div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
+						<div class="w-16 h-16 bg-gray-700 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold group-hover:rotate-6 transition-transform">
+							▲
+						</div>
+						<h3 class="font-bold text-gray-900 mb-1">Garmin</h3>
+						<p class="text-sm text-gray-600">Sports Tracking</p>
+					</div>
+
+					<!-- Notion -->
+					<div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
+						<div class="w-16 h-16 bg-white border-2 border-gray-300 rounded-xl mx-auto mb-4 flex items-center justify-center text-gray-900 text-2xl font-bold group-hover:rotate-6 transition-transform">
+							N
+						</div>
+						<h3 class="font-bold text-gray-900 mb-1">Notion</h3>
+						<p class="text-sm text-gray-600">Habit Tracking</p>
+					</div>
+
+					<!-- GitHub -->
+					<div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
+						<div class="w-16 h-16 bg-gray-900 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl group-hover:rotate-6 transition-transform">
+
+						</div>
+						<h3 class="font-bold text-gray-900 mb-1">GitHub</h3>
+						<p class="text-sm text-gray-600">Coding Streaks</p>
+					</div>
+				</div>
+
+				<!-- CTA -->
+				<div class="text-center scroll-fade-in">
+					<p class="text-gray-600 mb-6">
+						Want us to integrate with your favorite app?
+					</p>
+					<a href="#waitlist" class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:gap-3 transition-all">
+						Tell us on the waiting list
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -285,6 +476,36 @@ import WaitlistForm from '../components/WaitlistForm';
 						<div class="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
 						<span class="text-sm font-semibold">343 spots remaining</span>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Future Payment Partners -->
+		<section class="py-16 bg-gray-50 border-t border-gray-200">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-8">
+					<p class="text-sm text-gray-500 uppercase tracking-wide font-semibold mb-4">Future Payment Partners</p>
+					<p class="text-gray-600">Building trust with industry-leading payment providers (v2+)</p>
+				</div>
+				<div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
+					<!-- Stripe -->
+					<div class="text-4xl font-bold text-purple-600">stripe</div>
+					<!-- Twint -->
+					<div class="flex items-center gap-2">
+						<div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-xs">T</span>
+						</div>
+						<span class="font-bold text-xl text-gray-700">TWINT</span>
+					</div>
+					<!-- PayPal -->
+					<div class="text-3xl font-bold text-blue-600">PayPal</div>
+					<!-- Apple Pay -->
+					<div class="flex items-center gap-2">
+						<span class="text-3xl"></span>
+						<span class="font-semibold text-xl text-gray-700">Pay</span>
+					</div>
+					<!-- PostFinance -->
+					<div class="font-bold text-xl text-yellow-600">PostFinance</div>
 				</div>
 			</div>
 		</section>
