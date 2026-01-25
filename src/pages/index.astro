@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import WaitlistForm from '../components/WaitlistForm';
 ---
 
 <html lang="en">
@@ -13,72 +12,78 @@ import WaitlistForm from '../components/WaitlistForm';
 		<meta name="description" content="Bet with friends on your goals. Upload photo proof. Win your money back. Finally achieve fitness, career, and habit goals with real financial stakes." />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	</head>
 	<body class="bg-gray-50 text-gray-900 font-sans overflow-x-hidden">
 		<!-- Header with glassmorphism -->
 		<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-				<div class="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+				<div class="text-xl font-bold text-purple-600">
 					Accountability Bet
 				</div>
 				<nav class="hidden md:flex items-center space-x-8">
 					<a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
 					<a href="#how-it-works" class="text-gray-600 hover:text-gray-900 transition-colors">How It Works</a>
-					<a href="#waitlist" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition-all hover:-translate-y-0.5">
-						Join Waiting List
+					<a href="https://app.accountabilitybet.ch/login" class="text-gray-600 hover:text-gray-900 transition-colors">Log In</a>
+					<a href="https://app.accountabilitybet.ch/signup" class="bg-purple-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:bg-purple-700 hover:shadow-lg hover:shadow-purple-500/30 transition-all hover:-translate-y-0.5">
+						Get Started Free
 					</a>
 				</nav>
+				<!-- Mobile menu button -->
+				<button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				</button>
+			</div>
+			<!-- Mobile menu -->
+			<div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/50 px-4 py-4 space-y-3">
+				<a href="#features" class="block text-gray-600 hover:text-gray-900 py-2">Features</a>
+				<a href="#how-it-works" class="block text-gray-600 hover:text-gray-900 py-2">How It Works</a>
+				<a href="https://app.accountabilitybet.ch/login" class="block text-gray-600 hover:text-gray-900 py-2">Log In</a>
+				<a href="https://app.accountabilitybet.ch/signup" class="block bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-purple-700 transition-all">
+					Get Started Free
+				</a>
 			</div>
 		</header>
 
 		<!-- Hero Section with Gradient Background -->
 		<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
 			<!-- Animated gradient background -->
-			<div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-teal-500 animate-gradient"></div>
+			<div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 animate-gradient"></div>
 
 			<!-- Mesh gradient overlay -->
 			<div class="absolute inset-0 opacity-30">
 				<div class="absolute top-0 left-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-				<div class="absolute top-0 right-1/4 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-				<div class="absolute bottom-0 left-1/3 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+				<div class="absolute top-0 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+				<div class="absolute bottom-0 left-1/3 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
 			</div>
 
 			<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
-				<!-- Launch badge -->
-				<div class="mb-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-					<span class="relative flex h-2 w-2">
-						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-						<span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-					</span>
-					<span class="text-sm font-semibold">Swiss Beta Launch Q2 2026 • First 500 Users</span>
-				</div>
-
-				<!-- Main headline with kinetic typography -->
-				<h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight">
+				<!-- Main headline -->
+				<h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-tight tracking-tight">
 					<span class="block">Put Money on</span>
-					<span class="block bg-gradient-to-r from-yellow-200 via-pink-200 to-blue-200 bg-clip-text text-transparent animate-gradient-x">
+					<span class="block bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-200 bg-clip-text text-transparent">
 						Your Goals
 					</span>
-					<span class="block">Stay Committed</span>
 				</h1>
 
 				<p class="text-xl md:text-2xl text-white/90 mb-4 max-w-3xl mx-auto font-medium">
 					Bet with friends. Upload photo proof. Win your money back.
 				</p>
-				<p class="text-lg text-white/70 mb-12 max-w-2xl mx-auto">
+				<p class="text-lg text-white/70 mb-10 max-w-2xl mx-auto">
 					Finally achieve those fitness, career, and habit goals with real financial stakes. Because when promises fail, money works.
 				</p>
 
 				<!-- CTA Buttons -->
 				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-					<a href="#waitlist" class="group bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:shadow-white/50 transition-all hover:-translate-y-1 inline-flex items-center gap-2">
-						Join the Waiting List
+					<a href="https://app.accountabilitybet.ch/signup" class="group bg-white text-purple-600 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-white/30 transition-all hover:-translate-y-1 inline-flex items-center gap-2">
+						Get Started Free
 						<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 						</svg>
 					</a>
-					<a href="#how-it-works" class="border-2 border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all">
+					<a href="#how-it-works" class="border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all">
 						See How It Works
 					</a>
 				</div>
@@ -87,10 +92,10 @@ import WaitlistForm from '../components/WaitlistForm';
 				<div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
 					<div class="flex -space-x-2">
 						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 border-2 border-white"></div>
-						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-teal-600 border-2 border-white"></div>
-						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-600 border-2 border-white"></div>
+						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-indigo-600 border-2 border-white"></div>
+						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 border-2 border-white"></div>
 					</div>
-					<span class="text-sm font-semibold">157 goal-getters ahead of you</span>
+					<span class="text-sm font-semibold">Join goal-getters achieving more</span>
 				</div>
 			</div>
 
@@ -103,40 +108,38 @@ import WaitlistForm from '../components/WaitlistForm';
 		</section>
 
 		<!-- Features Section with Bento Grid -->
-		<section id="features" class="py-32 bg-gray-50 relative">
+		<section id="features" class="py-24 md:py-32 bg-gray-50 relative">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16 scroll-fade-in">
-					<h2 class="text-5xl font-black mb-4">Why It Works</h2>
+					<h2 class="text-4xl md:text-5xl font-extrabold mb-4">Why It Works</h2>
 					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
 						Money + social accountability keeps people committed when promises alone fail
 					</p>
 				</div>
 
 				<!-- Bento Grid Layout -->
-				<div class="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-[200px]">
+				<div class="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-[180px] md:auto-rows-[200px]">
 					<!-- Large feature card - Real Stakes -->
-					<div class="md:col-span-4 md:row-span-2 bg-gradient-to-br from-purple-500 to-blue-600 rounded-3xl p-8 text-white relative overflow-hidden group hover:scale-[1.02] transition-transform scroll-fade-in glass-card">
-						<div class="absolute inset-0 bg-white/5 backdrop-blur-xl"></div>
+					<div class="md:col-span-4 md:row-span-2 bg-gradient-to-br from-purple-500 to-purple-700 rounded-3xl p-6 md:p-8 text-white relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500 scroll-fade-in">
 						<div class="relative z-10">
-							<div class="text-6xl mb-4">💰</div>
-							<h3 class="text-3xl font-bold mb-4">Real Financial Stakes</h3>
-							<p class="text-lg text-white/90 mb-6 max-w-md">
+							<div class="text-5xl md:text-6xl mb-4">💰</div>
+							<h3 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Real Financial Stakes</h3>
+							<p class="text-base md:text-lg text-white/90 mb-4 md:mb-6 max-w-md">
 								Set meaningful financial stakes that actually matter. The fear of losing CHF 20 to your friend is more powerful than any motivation app.
 							</p>
-							<div class="inline-block bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl px-6 py-3">
+							<div class="inline-block bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl px-4 md:px-6 py-2 md:py-3">
 								<span class="text-sm font-semibold">Recommended: CHF 20-50 per bet</span>
 							</div>
 						</div>
 						<!-- Decorative element -->
-						<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+						<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
 					</div>
 
 					<!-- Photo Proof card -->
-					<div class="md:col-span-2 md:row-span-1 bg-gradient-to-br from-pink-500 to-orange-500 rounded-3xl p-6 text-white relative overflow-hidden hover:scale-[1.02] transition-transform scroll-fade-in glass-card">
-						<div class="absolute inset-0 bg-white/5 backdrop-blur-xl"></div>
+					<div class="md:col-span-2 md:row-span-1 bg-gradient-to-br from-pink-500 to-purple-500 rounded-3xl p-6 text-white relative overflow-hidden hover:scale-[1.02] transition-transform duration-500 scroll-fade-in">
 						<div class="relative z-10">
-							<div class="text-4xl mb-2">📸</div>
-							<h3 class="text-xl font-bold mb-2">Photo Proof</h3>
+							<div class="text-3xl md:text-4xl mb-2">📸</div>
+							<h3 class="text-lg md:text-xl font-bold mb-2">Photo Proof</h3>
 							<p class="text-sm text-white/90">
 								Upload photo evidence. Partner validates. Auto-approve if no response.
 							</p>
@@ -144,11 +147,10 @@ import WaitlistForm from '../components/WaitlistForm';
 					</div>
 
 					<!-- Social Accountability card -->
-					<div class="md:col-span-2 md:row-span-1 bg-gradient-to-br from-teal-500 to-green-500 rounded-3xl p-6 text-white relative overflow-hidden hover:scale-[1.02] transition-transform scroll-fade-in glass-card">
-						<div class="absolute inset-0 bg-white/5 backdrop-blur-xl"></div>
+					<div class="md:col-span-2 md:row-span-1 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-3xl p-6 text-white relative overflow-hidden hover:scale-[1.02] transition-transform duration-500 scroll-fade-in">
 						<div class="relative z-10">
-							<div class="text-4xl mb-2">🤝</div>
-							<h3 class="text-xl font-bold mb-2">Social Pressure</h3>
+							<div class="text-3xl md:text-4xl mb-2">🤝</div>
+							<h3 class="text-lg md:text-xl font-bold mb-2">Social Pressure</h3>
 							<p class="text-sm text-white/90">
 								Friends keep you honest. Create asymmetric goals with different targets.
 							</p>
@@ -156,19 +158,19 @@ import WaitlistForm from '../components/WaitlistForm';
 					</div>
 
 					<!-- Trust & Security -->
-					<div class="md:col-span-3 md:row-span-1 bg-white rounded-3xl p-6 border border-gray-200 hover:shadow-xl transition-all scroll-fade-in glass-card">
+					<div class="md:col-span-3 md:row-span-1 bg-white rounded-3xl p-6 border border-gray-200 hover:shadow-xl hover:border-purple-200 transition-all duration-500 scroll-fade-in">
 						<div class="flex items-center gap-3 mb-3">
-							<div class="text-3xl">🇨🇭</div>
-							<h3 class="text-lg font-bold">Swiss Quality & Security</h3>
+							<div class="text-2xl md:text-3xl">🇨🇭</div>
+							<h3 class="text-base md:text-lg font-bold">Swiss Quality & Security</h3>
 						</div>
 						<p class="text-sm text-gray-600">Bank-grade encryption • Swiss data hosting • No hidden fees</p>
 					</div>
 
 					<!-- Charity Option -->
-					<div class="md:col-span-3 md:row-span-1 bg-gradient-to-br from-green-500 to-teal-500 rounded-3xl p-6 text-white hover:shadow-xl transition-all scroll-fade-in glass-card">
+					<div class="md:col-span-3 md:row-span-1 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl p-6 text-white hover:shadow-xl transition-all duration-500 scroll-fade-in">
 						<div class="flex items-center gap-3 mb-3">
-							<div class="text-3xl">💚</div>
-							<h3 class="text-lg font-bold">Pay Friend or Charity</h3>
+							<div class="text-2xl md:text-3xl">💚</div>
+							<h3 class="text-base md:text-lg font-bold">Pay Friend or Charity</h3>
 						</div>
 						<p class="text-sm text-white/90">Choose where your money goes: accountability partner or donate to verified charities.</p>
 					</div>
@@ -176,75 +178,75 @@ import WaitlistForm from '../components/WaitlistForm';
 			</div>
 		</section>
 
-		<!-- How It Works Section with Scroll Animations -->
-		<section id="how-it-works" class="py-32 bg-white relative overflow-hidden">
+		<!-- How It Works Section -->
+		<section id="how-it-works" class="py-24 md:py-32 bg-white relative overflow-hidden">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-20">
-					<h2 class="text-5xl font-black mb-4">How It Works</h2>
+				<div class="text-center mb-16 md:mb-20">
+					<h2 class="text-4xl md:text-5xl font-extrabold mb-4">How It Works</h2>
 					<p class="text-xl text-gray-600 max-w-2xl mx-auto">Four simple steps to turn your goals into reality</p>
 				</div>
 
-				<div class="max-w-4xl mx-auto space-y-20">
+				<div class="max-w-4xl mx-auto space-y-16 md:space-y-20">
 					<!-- Step 1 -->
-					<div class="flex flex-col md:flex-row gap-8 items-center scroll-fade-in">
-						<div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg step-number">
+					<div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center scroll-fade-in">
+						<div class="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-purple-600 text-white rounded-2xl flex items-center justify-center text-xl md:text-2xl font-extrabold shadow-lg shadow-purple-500/30">
 							1
 						</div>
-						<div class="flex-1">
-							<h3 class="text-2xl font-bold mb-2">Create Your Bet</h3>
-							<p class="text-gray-600 text-lg">
-								Choose from templates or create custom goals. Set frequency (e.g., 2x/week), duration (4 weeks), stakes (CHF 20/week), and proof requirements (gym selfie, Strava screenshot).
+						<div class="flex-1 text-center md:text-left">
+							<h3 class="text-xl md:text-2xl font-bold mb-2">Create Your Bet</h3>
+							<p class="text-gray-600 text-base md:text-lg">
+								Choose from templates or create custom goals. Set frequency (e.g., 2x/week), duration (4 weeks), stakes (CHF 20/week), and proof requirements.
 							</p>
 						</div>
-						<div class="flex-shrink-0 w-48 h-48 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl flex items-center justify-center text-6xl">
+						<div class="flex-shrink-0 w-32 h-32 md:w-48 md:h-48 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center text-5xl md:text-6xl">
 							🎯
 						</div>
 					</div>
 
 					<!-- Step 2 -->
-					<div class="flex flex-col md:flex-row-reverse gap-8 items-center scroll-fade-in">
-						<div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-pink-500 to-orange-500 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg step-number">
+					<div class="flex flex-col md:flex-row-reverse gap-6 md:gap-8 items-center scroll-fade-in">
+						<div class="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-pink-500 text-white rounded-2xl flex items-center justify-center text-xl md:text-2xl font-extrabold shadow-lg shadow-pink-500/30">
 							2
 						</div>
-						<div class="flex-1 md:text-right">
-							<h3 class="text-2xl font-bold mb-2">Invite Your Partner</h3>
-							<p class="text-gray-600 text-lg">
+						<div class="flex-1 text-center md:text-right">
+							<h3 class="text-xl md:text-2xl font-bold mb-2">Invite Your Partner</h3>
+							<p class="text-gray-600 text-base md:text-lg">
 								Send an invitation to a friend via email. They can accept, negotiate different terms, or decline. Bet becomes active when both agree.
 							</p>
 						</div>
-						<div class="flex-shrink-0 w-48 h-48 bg-gradient-to-br from-pink-100 to-orange-100 rounded-2xl flex items-center justify-center text-6xl">
+						<div class="flex-shrink-0 w-32 h-32 md:w-48 md:h-48 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center text-5xl md:text-6xl">
 							✉️
 						</div>
 					</div>
 
 					<!-- Step 3 -->
-					<div class="flex flex-col md:flex-row gap-8 items-center scroll-fade-in">
-						<div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-teal-500 to-green-500 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg step-number">
+					<div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center scroll-fade-in">
+						<div class="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-emerald-500 text-white rounded-2xl flex items-center justify-center text-xl md:text-2xl font-extrabold shadow-lg shadow-emerald-500/30">
 							3
 						</div>
-						<div class="flex-1">
-							<h3 class="text-2xl font-bold mb-2">Upload Proof & Track Progress</h3>
-							<p class="text-gray-600 text-lg">
-								Submit photo proof after each action. Partner reviews and approves or rejects. Auto-approved if no response in 24h. See visual progress toward weekly goals.
+						<div class="flex-1 text-center md:text-left">
+							<h3 class="text-xl md:text-2xl font-bold mb-2">Upload Proof & Track Progress</h3>
+							<p class="text-gray-600 text-base md:text-lg">
+								Submit photo proof after each action. Partner reviews and approves. Auto-approved if no response in 24h. See visual progress toward goals.
 							</p>
 						</div>
-						<div class="flex-shrink-0 w-48 h-48 bg-gradient-to-br from-teal-100 to-green-100 rounded-2xl flex items-center justify-center text-6xl">
+						<div class="flex-shrink-0 w-32 h-32 md:w-48 md:h-48 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl flex items-center justify-center text-5xl md:text-6xl">
 							📱
 						</div>
 					</div>
 
 					<!-- Step 4 -->
-					<div class="flex flex-col md:flex-row-reverse gap-8 items-center scroll-fade-in">
-						<div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg step-number">
+					<div class="flex flex-col md:flex-row-reverse gap-6 md:gap-8 items-center scroll-fade-in">
+						<div class="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-xl md:text-2xl font-extrabold shadow-lg shadow-indigo-500/30">
 							4
 						</div>
-						<div class="flex-1 md:text-right">
-							<h3 class="text-2xl font-bold mb-2">Settle & Celebrate</h3>
-							<p class="text-gray-600 text-lg">
-								Week ends, app calculates who met their commitment. Failed weeks? Pay your partner or donate to charity. Met your goals? Keep your money and your momentum!
+						<div class="flex-1 text-center md:text-right">
+							<h3 class="text-xl md:text-2xl font-bold mb-2">Settle & Celebrate</h3>
+							<p class="text-gray-600 text-base md:text-lg">
+								Period ends, app calculates who met their commitment. Failed? Pay your partner or donate to charity. Succeeded? Keep your money and momentum!
 							</p>
 						</div>
-						<div class="flex-shrink-0 w-48 h-48 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center text-6xl">
+						<div class="flex-shrink-0 w-32 h-32 md:w-48 md:h-48 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center text-5xl md:text-6xl">
 							🎉
 						</div>
 					</div>
@@ -253,32 +255,32 @@ import WaitlistForm from '../components/WaitlistForm';
 		</section>
 
 		<!-- Charity Donation Section -->
-		<section class="py-32 bg-gradient-to-br from-green-50 to-teal-50 relative overflow-hidden">
+		<section class="py-24 md:py-32 bg-gradient-to-br from-emerald-50 to-teal-50 relative overflow-hidden">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid md:grid-cols-2 gap-12 items-center">
+				<div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 					<div class="scroll-fade-in">
-						<div class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+						<div class="inline-block bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl text-sm font-semibold mb-4">
 							🌍 Give Back Option
 						</div>
-						<h2 class="text-5xl font-black mb-6">Lose to Your Friend.<br/>Or Donate to Change the World.</h2>
-						<p class="text-xl text-gray-700 mb-6">
+						<h2 class="text-3xl md:text-5xl font-extrabold mb-6">Lose to Your Friend.<br/>Or Change the World.</h2>
+						<p class="text-lg md:text-xl text-gray-700 mb-6">
 							When you miss your goal, choose where your money goes. Pay your accountability partner or donate to a cause you care about.
 						</p>
 						<ul class="space-y-3 mb-8">
 							<li class="flex items-start gap-3">
-								<svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
 								<span class="text-gray-700">Support verified charities worldwide</span>
 							</li>
 							<li class="flex items-start gap-3">
-								<svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
 								<span class="text-gray-700">Turn failures into positive impact</span>
 							</li>
 							<li class="flex items-start gap-3">
-								<svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
 								<span class="text-gray-700">Automatic receipts for tax deduction</span>
@@ -287,226 +289,71 @@ import WaitlistForm from '../components/WaitlistForm';
 					</div>
 
 					<div class="scroll-fade-in">
-						<div class="bg-white rounded-3xl p-8 shadow-2xl border border-gray-200">
+						<div class="bg-white rounded-3xl p-6 md:p-8 shadow-2xl border border-gray-100">
 							<h3 class="text-xl font-bold mb-6 text-gray-900">Trusted Charity Partners</h3>
-							<div class="grid grid-cols-2 gap-6">
-								<!-- Red Cross -->
-								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+							<div class="grid grid-cols-2 gap-4 md:gap-6">
+								<div class="bg-gray-50 rounded-2xl p-4 md:p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 group">
 									<div class="text-center">
-										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">❤️</div>
+										<div class="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">❤️</div>
 										<div class="text-sm font-semibold text-gray-700">Red Cross</div>
 									</div>
 								</div>
-								<!-- UNICEF -->
-								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+								<div class="bg-gray-50 rounded-2xl p-4 md:p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 group">
 									<div class="text-center">
-										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🌟</div>
+										<div class="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🌟</div>
 										<div class="text-sm font-semibold text-gray-700">UNICEF</div>
 									</div>
 								</div>
-								<!-- WWF -->
-								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+								<div class="bg-gray-50 rounded-2xl p-4 md:p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 group">
 									<div class="text-center">
-										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🐼</div>
+										<div class="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🐼</div>
 										<div class="text-sm font-semibold text-gray-700">WWF</div>
 									</div>
 								</div>
-								<!-- Doctors Without Borders -->
-								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
+								<div class="bg-gray-50 rounded-2xl p-4 md:p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 group">
 									<div class="text-center">
-										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🏥</div>
-										<div class="text-sm font-semibold text-gray-700">MSF</div>
-									</div>
-								</div>
-								<!-- Save the Children -->
-								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
-									<div class="text-center">
-										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">👶</div>
-										<div class="text-sm font-semibold text-gray-700">Save the Children</div>
-									</div>
-								</div>
-								<!-- Local Charities -->
-								<div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group">
-									<div class="text-center">
-										<div class="text-4xl mb-2 group-hover:scale-110 transition-transform">🇨🇭</div>
+										<div class="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🇨🇭</div>
 										<div class="text-sm font-semibold text-gray-700">Swiss Solidarity</div>
 									</div>
 								</div>
 							</div>
-							<p class="text-sm text-gray-500 text-center mt-6">+ 50 more verified charities</p>
+							<p class="text-sm text-gray-500 text-center mt-6">+ more verified charities</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Future Integrations Section -->
-		<section class="py-32 bg-white relative overflow-hidden">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-16 scroll-fade-in">
-					<div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-						🚀 Coming Soon
-					</div>
-					<h2 class="text-5xl font-black mb-4">Seamless Integrations</h2>
-					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
-						Auto-verify your progress with your favorite fitness and productivity apps. No manual uploads needed.
-					</p>
-				</div>
+		<!-- CTA Section -->
+		<section class="py-24 md:py-32 relative overflow-hidden">
+			<!-- Gradient background -->
+			<div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800"></div>
+			<div class="absolute inset-0 opacity-20">
+				<div class="absolute top-0 right-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+				<div class="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
+			</div>
 
-				<!-- Integration Cards -->
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-					<!-- Strava -->
-					<div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
-						<div class="w-16 h-16 bg-orange-500 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold group-hover:rotate-6 transition-transform">
-							S
-						</div>
-						<h3 class="font-bold text-gray-900 mb-1">Strava</h3>
-						<p class="text-sm text-gray-600">Running & Cycling</p>
-					</div>
+			<div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Ready to Commit?</h2>
+				<p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+					Start your first accountability bet today. It's free to create an account and your first bet.
+				</p>
 
-					<!-- Apple Health -->
-					<div class="bg-gradient-to-br from-pink-50 to-red-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
-						<div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-500 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl group-hover:rotate-6 transition-transform">
-
-						</div>
-						<h3 class="font-bold text-gray-900 mb-1">Apple Health</h3>
-						<p class="text-sm text-gray-600">Activity & Workouts</p>
-					</div>
-
-					<!-- Google Fit -->
-					<div class="bg-gradient-to-br from-blue-50 to-green-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
-						<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl group-hover:rotate-6 transition-transform">
-							G
-						</div>
-						<h3 class="font-bold text-gray-900 mb-1">Google Fit</h3>
-						<p class="text-sm text-gray-600">Fitness Tracking</p>
-					</div>
-
-					<!-- MyFitnessPal -->
-					<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
-						<div class="w-16 h-16 bg-blue-600 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-xl font-bold group-hover:rotate-6 transition-transform">
-							MFP
-						</div>
-						<h3 class="font-bold text-gray-900 mb-1">MyFitnessPal</h3>
-						<p class="text-sm text-gray-600">Nutrition</p>
-					</div>
-
-					<!-- Fitbit -->
-					<div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
-						<div class="w-16 h-16 bg-teal-500 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl group-hover:rotate-6 transition-transform">
-							●●
-						</div>
-						<h3 class="font-bold text-gray-900 mb-1">Fitbit</h3>
-						<p class="text-sm text-gray-600">Steps & Sleep</p>
-					</div>
-
-					<!-- Garmin -->
-					<div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
-						<div class="w-16 h-16 bg-gray-700 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold group-hover:rotate-6 transition-transform">
-							▲
-						</div>
-						<h3 class="font-bold text-gray-900 mb-1">Garmin</h3>
-						<p class="text-sm text-gray-600">Sports Tracking</p>
-					</div>
-
-					<!-- Notion -->
-					<div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
-						<div class="w-16 h-16 bg-white border-2 border-gray-300 rounded-xl mx-auto mb-4 flex items-center justify-center text-gray-900 text-2xl font-bold group-hover:rotate-6 transition-transform">
-							N
-						</div>
-						<h3 class="font-bold text-gray-900 mb-1">Notion</h3>
-						<p class="text-sm text-gray-600">Habit Tracking</p>
-					</div>
-
-					<!-- GitHub -->
-					<div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 text-center hover:scale-105 transition-transform scroll-fade-in group">
-						<div class="w-16 h-16 bg-gray-900 rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl group-hover:rotate-6 transition-transform">
-
-						</div>
-						<h3 class="font-bold text-gray-900 mb-1">GitHub</h3>
-						<p class="text-sm text-gray-600">Coding Streaks</p>
-					</div>
-				</div>
-
-				<!-- CTA -->
-				<div class="text-center scroll-fade-in">
-					<p class="text-gray-600 mb-6">
-						Want us to integrate with your favorite app?
-					</p>
-					<a href="#waitlist" class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:gap-3 transition-all">
-						Tell us on the waiting list
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+					<a href="https://app.accountabilitybet.ch/signup" class="group bg-white text-purple-600 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-white/30 transition-all hover:-translate-y-1 inline-flex items-center gap-2">
+						Create Free Account
+						<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 						</svg>
 					</a>
-				</div>
-			</div>
-		</section>
-
-		<!-- Waiting List / Scorecard Section -->
-		<section id="waitlist" class="py-32 relative overflow-hidden">
-			<!-- Gradient background -->
-			<div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-teal-500"></div>
-			<div class="absolute inset-0 opacity-20">
-				<div class="absolute top-0 right-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
-				<div class="absolute bottom-0 left-1/4 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
-			</div>
-
-			<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-12 text-white">
-					<h2 class="text-5xl font-black mb-4">Ready to Commit?</h2>
-					<p class="text-xl text-white/90 max-w-2xl mx-auto">
-						Take our Accountability Readiness Quiz and join the waiting list for early access
-					</p>
+					<a href="https://app.accountabilitybet.ch/login" class="border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all">
+						I Have an Account
+					</a>
 				</div>
 
-				<WaitlistForm client:load />
-
-				<!-- Urgency indicators -->
-				<div class="mt-12 flex flex-wrap justify-center gap-6 text-white">
-					<div class="flex items-center gap-2">
-						<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-						<span class="text-sm font-semibold">Launch in 74 days</span>
-					</div>
-					<div class="flex items-center gap-2">
-						<div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-						<span class="text-sm font-semibold">157 people on list</span>
-					</div>
-					<div class="flex items-center gap-2">
-						<div class="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
-						<span class="text-sm font-semibold">343 spots remaining</span>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Future Payment Partners -->
-		<section class="py-16 bg-gray-50 border-t border-gray-200">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-8">
-					<p class="text-sm text-gray-500 uppercase tracking-wide font-semibold mb-4">Future Payment Partners</p>
-					<p class="text-gray-600">Building trust with industry-leading payment providers (v2+)</p>
-				</div>
-				<div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
-					<!-- Stripe -->
-					<div class="text-4xl font-bold text-purple-600">stripe</div>
-					<!-- Twint -->
-					<div class="flex items-center gap-2">
-						<div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-							<span class="text-white font-bold text-xs">T</span>
-						</div>
-						<span class="font-bold text-xl text-gray-700">TWINT</span>
-					</div>
-					<!-- PayPal -->
-					<div class="text-3xl font-bold text-blue-600">PayPal</div>
-					<!-- Apple Pay -->
-					<div class="flex items-center gap-2">
-						<span class="text-3xl"></span>
-						<span class="font-semibold text-xl text-gray-700">Pay</span>
-					</div>
-					<!-- PostFinance -->
-					<div class="font-bold text-xl text-yellow-600">PostFinance</div>
-				</div>
+				<p class="text-white/60 text-sm">
+					No credit card required • Free to start • Cancel anytime
+				</p>
 			</div>
 		</section>
 
@@ -514,14 +361,14 @@ import WaitlistForm from '../components/WaitlistForm';
 		<footer class="bg-gray-900 text-white py-12">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center">
-					<div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
+					<div class="text-2xl font-bold text-purple-400 mb-4">
 						Accountability Bet
 					</div>
 					<p class="text-gray-400 mb-6">Turn goals into money-backed commitments</p>
-					<div class="flex justify-center gap-8 text-sm text-gray-400">
+					<div class="flex flex-wrap justify-center gap-6 md:gap-8 text-sm text-gray-400">
 						<a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
 						<a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-						<a href="#" class="hover:text-white transition-colors">Contact</a>
+						<a href="mailto:hello@accountabilitybet.ch" class="hover:text-white transition-colors">Contact</a>
 					</div>
 					<p class="text-gray-500 text-sm mt-6">&copy; 2026 Accountability Bet. Made in Switzerland 🇨🇭</p>
 				</div>
@@ -530,11 +377,6 @@ import WaitlistForm from '../components/WaitlistForm';
 
 		<style>
 			@keyframes gradient {
-				0%, 100% { background-position: 0% 50%; }
-				50% { background-position: 100% 50%; }
-			}
-
-			@keyframes gradient-x {
 				0%, 100% { background-position: 0% 50%; }
 				50% { background-position: 100% 50%; }
 			}
@@ -550,11 +392,6 @@ import WaitlistForm from '../components/WaitlistForm';
 				animation: gradient 15s ease infinite;
 			}
 
-			.animate-gradient-x {
-				background-size: 200% 200%;
-				animation: gradient-x 3s ease infinite;
-			}
-
 			.animate-blob {
 				animation: blob 7s infinite;
 			}
@@ -567,12 +404,7 @@ import WaitlistForm from '../components/WaitlistForm';
 				animation-delay: 4s;
 			}
 
-			.glass-card {
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
-			}
-
-			/* Scroll-triggered animations using CSS */
+			/* Scroll-triggered animations */
 			.scroll-fade-in {
 				opacity: 0;
 				transform: translateY(30px);
@@ -588,21 +420,8 @@ import WaitlistForm from '../components/WaitlistForm';
 				}
 			}
 
-			.step-number {
-				animation: pulse-glow 2s ease-in-out infinite;
-			}
-
-			@keyframes pulse-glow {
-				0%, 100% {
-					box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
-				}
-				50% {
-					box-shadow: 0 10px 50px rgba(139, 92, 246, 0.8);
-				}
-			}
-
 			body {
-				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+				font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 			}
 
 			/* Fallback for browsers without scroll-timeline support */
@@ -622,13 +441,13 @@ import WaitlistForm from '../components/WaitlistForm';
 					transition-duration: 0.01ms !important;
 				}
 			}
-
-			/* Mobile menu toggle (simplified) */
-			@media (max-width: 768px) {
-				nav {
-					display: none;
-				}
-			}
 		</style>
+
+		<script>
+			// Mobile menu toggle
+			document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+				document.getElementById('mobile-menu')?.classList.toggle('hidden');
+			});
+		</script>
 	</body>
 </html>
