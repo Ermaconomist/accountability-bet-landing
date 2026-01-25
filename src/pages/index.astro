@@ -1,134 +1,413 @@
 ---
 import '../styles/global.css';
+import WaitlistForm from '../components/WaitlistForm';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Accountability Bet - Turn Goals Into Money-Backed Commitments</title>
-		<meta name="description" content="Make bets with friends on your personal goals. Upload photo proof, track progress, and stay accountable with real financial stakes." />
+		<title>Accountability Bet - Put Money on Your Goals. Stay Committed.</title>
+		<meta name="description" content="Bet with friends on your goals. Upload photo proof. Win your money back. Finally achieve fitness, career, and habit goals with real financial stakes." />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-white text-gray-900">
-		<!-- Header -->
-		<header class="border-b border-gray-200">
+	<body class="bg-gray-50 text-gray-900 font-sans overflow-x-hidden">
+		<!-- Header with glassmorphism -->
+		<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-				<div class="text-xl font-bold">Accountability Bet</div>
-				<nav class="space-x-6">
-					<a href="#features" class="text-gray-600 hover:text-gray-900">Features</a>
-					<a href="#how-it-works" class="text-gray-600 hover:text-gray-900">How It Works</a>
-					<a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Get Started</a>
+				<div class="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+					Accountability Bet
+				</div>
+				<nav class="hidden md:flex items-center space-x-8">
+					<a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+					<a href="#how-it-works" class="text-gray-600 hover:text-gray-900 transition-colors">How It Works</a>
+					<a href="#waitlist" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition-all hover:-translate-y-0.5">
+						Join Waiting List
+					</a>
 				</nav>
 			</div>
 		</header>
 
-		<!-- Hero Section -->
-		<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-			<h1 class="text-5xl font-bold mb-6">
-				Put Your Money Where Your <span class="text-blue-600">Goals</span> Are
-			</h1>
-			<p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-				Make accountability bets with friends. Set financial stakes, upload photo proof, and stay committed.
-				Because when promises fail, money works.
-			</p>
-			<div class="flex gap-4 justify-center">
-				<a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700">
-					Start Your First Bet
-				</a>
-				<a href="#how-it-works" class="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-lg text-lg font-semibold hover:border-gray-400">
-					Learn More
-				</a>
-			</div>
-		</section>
+		<!-- Hero Section with Gradient Background -->
+		<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+			<!-- Animated gradient background -->
+			<div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-teal-500 animate-gradient"></div>
 
-		<!-- Features Section -->
-		<section id="features" class="bg-gray-50 py-20">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 class="text-3xl font-bold text-center mb-12">Why It Works</h2>
-				<div class="grid md:grid-cols-3 gap-8">
-					<div class="bg-white p-6 rounded-lg shadow-sm">
-						<div class="text-3xl mb-4">💰</div>
-						<h3 class="text-xl font-semibold mb-2">Real Stakes</h3>
-						<p class="text-gray-600">
-							Set meaningful financial stakes. The fear of losing CHF 20 to your friend beats any motivation app.
-						</p>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-sm">
-						<div class="text-3xl mb-4">📸</div>
-						<h3 class="text-xl font-semibold mb-2">Photo Proof</h3>
-						<p class="text-gray-600">
-							Upload photo proof of your progress. Your partner validates submissions with optional auto-approval.
-						</p>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-sm">
-						<div class="text-3xl mb-4">🤝</div>
-						<h3 class="text-xl font-semibold mb-2">Social Accountability</h3>
-						<p class="text-gray-600">
-							Friends keep you honest. Create asymmetric goals where each person has their own frequency target.
-						</p>
-					</div>
+			<!-- Mesh gradient overlay -->
+			<div class="absolute inset-0 opacity-30">
+				<div class="absolute top-0 left-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+				<div class="absolute top-0 right-1/4 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+				<div class="absolute bottom-0 left-1/3 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+			</div>
+
+			<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
+				<!-- Launch badge -->
+				<div class="mb-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+					<span class="relative flex h-2 w-2">
+						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+						<span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+					</span>
+					<span class="text-sm font-semibold">Swiss Beta Launch Q2 2026 • First 500 Users</span>
 				</div>
-			</div>
-		</section>
 
-		<!-- How It Works Section -->
-		<section id="how-it-works" class="py-20">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
-				<div class="max-w-3xl mx-auto space-y-8">
-					<div class="flex gap-4">
-						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">1</div>
-						<div>
-							<h3 class="text-lg font-semibold mb-1">Create Your Bet</h3>
-							<p class="text-gray-600">Choose from templates or create custom goals. Set frequency, duration, stakes, and proof requirements.</p>
-						</div>
-					</div>
-					<div class="flex gap-4">
-						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">2</div>
-						<div>
-							<h3 class="text-lg font-semibold mb-1">Invite Your Partner</h3>
-							<p class="text-gray-600">Send an invitation to a friend. They can accept, negotiate terms, or decline.</p>
-						</div>
-					</div>
-					<div class="flex gap-4">
-						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">3</div>
-						<div>
-							<h3 class="text-lg font-semibold mb-1">Upload Proof</h3>
-							<p class="text-gray-600">Submit photo proof of your progress. Get reminders and track toward your weekly goals.</p>
-						</div>
-					</div>
-					<div class="flex gap-4">
-						<div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">4</div>
-						<div>
-							<h3 class="text-lg font-semibold mb-1">Track & Settle</h3>
-							<p class="text-gray-600">See visual progress dashboards. When the bet ends, IOUs show who owes what to whom.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+				<!-- Main headline with kinetic typography -->
+				<h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight">
+					<span class="block">Put Money on</span>
+					<span class="block bg-gradient-to-r from-yellow-200 via-pink-200 to-blue-200 bg-clip-text text-transparent animate-gradient-x">
+						Your Goals
+					</span>
+					<span class="block">Stay Committed</span>
+				</h1>
 
-		<!-- CTA Section -->
-		<section class="bg-blue-600 text-white py-20">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-				<h2 class="text-3xl font-bold mb-4">Ready to commit?</h2>
-				<p class="text-xl mb-8 opacity-90">
-					Start your first accountability bet today and finally achieve those goals.
+				<p class="text-xl md:text-2xl text-white/90 mb-4 max-w-3xl mx-auto font-medium">
+					Bet with friends. Upload photo proof. Win your money back.
 				</p>
-				<a href="#" class="bg-white text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 inline-block">
-					Get Started Free
-				</a>
+				<p class="text-lg text-white/70 mb-12 max-w-2xl mx-auto">
+					Finally achieve those fitness, career, and habit goals with real financial stakes. Because when promises fail, money works.
+				</p>
+
+				<!-- CTA Buttons -->
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+					<a href="#waitlist" class="group bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:shadow-white/50 transition-all hover:-translate-y-1 inline-flex items-center gap-2">
+						Join the Waiting List
+						<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</a>
+					<a href="#how-it-works" class="border-2 border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all">
+						See How It Works
+					</a>
+				</div>
+
+				<!-- Social proof -->
+				<div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
+					<div class="flex -space-x-2">
+						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 border-2 border-white"></div>
+						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-teal-600 border-2 border-white"></div>
+						<div class="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-600 border-2 border-white"></div>
+					</div>
+					<span class="text-sm font-semibold">157 goal-getters ahead of you</span>
+				</div>
+			</div>
+
+			<!-- Scroll indicator -->
+			<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+				<svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+				</svg>
+			</div>
+		</section>
+
+		<!-- Features Section with Bento Grid -->
+		<section id="features" class="py-32 bg-gray-50 relative">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16 scroll-fade-in">
+					<h2 class="text-5xl font-black mb-4">Why It Works</h2>
+					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+						Money + social accountability keeps people committed when promises alone fail
+					</p>
+				</div>
+
+				<!-- Bento Grid Layout -->
+				<div class="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-[200px]">
+					<!-- Large feature card - Real Stakes -->
+					<div class="md:col-span-4 md:row-span-2 bg-gradient-to-br from-purple-500 to-blue-600 rounded-3xl p-8 text-white relative overflow-hidden group hover:scale-[1.02] transition-transform scroll-fade-in glass-card">
+						<div class="absolute inset-0 bg-white/5 backdrop-blur-xl"></div>
+						<div class="relative z-10">
+							<div class="text-6xl mb-4">💰</div>
+							<h3 class="text-3xl font-bold mb-4">Real Financial Stakes</h3>
+							<p class="text-lg text-white/90 mb-6 max-w-md">
+								Set meaningful financial stakes that actually matter. The fear of losing CHF 20 to your friend is more powerful than any motivation app.
+							</p>
+							<div class="inline-block bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl px-6 py-3">
+								<span class="text-sm font-semibold">Recommended: CHF 20-50 per bet</span>
+							</div>
+						</div>
+						<!-- Decorative element -->
+						<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+					</div>
+
+					<!-- Photo Proof card -->
+					<div class="md:col-span-2 md:row-span-1 bg-gradient-to-br from-pink-500 to-orange-500 rounded-3xl p-6 text-white relative overflow-hidden hover:scale-[1.02] transition-transform scroll-fade-in glass-card">
+						<div class="absolute inset-0 bg-white/5 backdrop-blur-xl"></div>
+						<div class="relative z-10">
+							<div class="text-4xl mb-2">📸</div>
+							<h3 class="text-xl font-bold mb-2">Photo Proof</h3>
+							<p class="text-sm text-white/90">
+								Upload photo evidence. Partner validates. Auto-approve if no response.
+							</p>
+						</div>
+					</div>
+
+					<!-- Social Accountability card -->
+					<div class="md:col-span-2 md:row-span-1 bg-gradient-to-br from-teal-500 to-green-500 rounded-3xl p-6 text-white relative overflow-hidden hover:scale-[1.02] transition-transform scroll-fade-in glass-card">
+						<div class="absolute inset-0 bg-white/5 backdrop-blur-xl"></div>
+						<div class="relative z-10">
+							<div class="text-4xl mb-2">🤝</div>
+							<h3 class="text-xl font-bold mb-2">Social Pressure</h3>
+							<p class="text-sm text-white/90">
+								Friends keep you honest. Create asymmetric goals with different targets.
+							</p>
+						</div>
+					</div>
+
+					<!-- Trust & Security -->
+					<div class="md:col-span-3 md:row-span-1 bg-white rounded-3xl p-6 border border-gray-200 hover:shadow-xl transition-all scroll-fade-in glass-card">
+						<div class="flex items-center gap-3 mb-3">
+							<div class="text-3xl">🇨🇭</div>
+							<h3 class="text-lg font-bold">Swiss Quality & Security</h3>
+						</div>
+						<p class="text-sm text-gray-600">Bank-grade encryption • Swiss data hosting • No hidden fees</p>
+					</div>
+
+					<!-- Manual IOU -->
+					<div class="md:col-span-3 md:row-span-1 bg-white rounded-3xl p-6 border border-gray-200 hover:shadow-xl transition-all scroll-fade-in glass-card">
+						<div class="flex items-center gap-3 mb-3">
+							<div class="text-3xl">📊</div>
+							<h3 class="text-lg font-bold">Simple IOU Tracking</h3>
+						</div>
+						<p class="text-sm text-gray-600">v1 focuses on accountability. Manual payment tracking between friends.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- How It Works Section with Scroll Animations -->
+		<section id="how-it-works" class="py-32 bg-white relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-20">
+					<h2 class="text-5xl font-black mb-4">How It Works</h2>
+					<p class="text-xl text-gray-600 max-w-2xl mx-auto">Four simple steps to turn your goals into reality</p>
+				</div>
+
+				<div class="max-w-4xl mx-auto space-y-20">
+					<!-- Step 1 -->
+					<div class="flex flex-col md:flex-row gap-8 items-center scroll-fade-in">
+						<div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg step-number">
+							1
+						</div>
+						<div class="flex-1">
+							<h3 class="text-2xl font-bold mb-2">Create Your Bet</h3>
+							<p class="text-gray-600 text-lg">
+								Choose from templates or create custom goals. Set frequency (e.g., 2x/week), duration (4 weeks), stakes (CHF 20/week), and proof requirements (gym selfie, Strava screenshot).
+							</p>
+						</div>
+						<div class="flex-shrink-0 w-48 h-48 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl flex items-center justify-center text-6xl">
+							🎯
+						</div>
+					</div>
+
+					<!-- Step 2 -->
+					<div class="flex flex-col md:flex-row-reverse gap-8 items-center scroll-fade-in">
+						<div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-pink-500 to-orange-500 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg step-number">
+							2
+						</div>
+						<div class="flex-1 md:text-right">
+							<h3 class="text-2xl font-bold mb-2">Invite Your Partner</h3>
+							<p class="text-gray-600 text-lg">
+								Send an invitation to a friend via email. They can accept, negotiate different terms, or decline. Bet becomes active when both agree.
+							</p>
+						</div>
+						<div class="flex-shrink-0 w-48 h-48 bg-gradient-to-br from-pink-100 to-orange-100 rounded-2xl flex items-center justify-center text-6xl">
+							✉️
+						</div>
+					</div>
+
+					<!-- Step 3 -->
+					<div class="flex flex-col md:flex-row gap-8 items-center scroll-fade-in">
+						<div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-teal-500 to-green-500 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg step-number">
+							3
+						</div>
+						<div class="flex-1">
+							<h3 class="text-2xl font-bold mb-2">Upload Proof & Track Progress</h3>
+							<p class="text-gray-600 text-lg">
+								Submit photo proof after each action. Partner reviews and approves or rejects. Auto-approved if no response in 24h. See visual progress toward weekly goals.
+							</p>
+						</div>
+						<div class="flex-shrink-0 w-48 h-48 bg-gradient-to-br from-teal-100 to-green-100 rounded-2xl flex items-center justify-center text-6xl">
+							📱
+						</div>
+					</div>
+
+					<!-- Step 4 -->
+					<div class="flex flex-col md:flex-row-reverse gap-8 items-center scroll-fade-in">
+						<div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg step-number">
+							4
+						</div>
+						<div class="flex-1 md:text-right">
+							<h3 class="text-2xl font-bold mb-2">Settle & Celebrate</h3>
+							<p class="text-gray-600 text-lg">
+								Week ends, app calculates who met their commitment. Failed weeks = you owe. Track IOUs and settle manually. Met your goals? Keep your money and your momentum!
+							</p>
+						</div>
+						<div class="flex-shrink-0 w-48 h-48 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center text-6xl">
+							🎉
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Waiting List / Scorecard Section -->
+		<section id="waitlist" class="py-32 relative overflow-hidden">
+			<!-- Gradient background -->
+			<div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-teal-500"></div>
+			<div class="absolute inset-0 opacity-20">
+				<div class="absolute top-0 right-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+				<div class="absolute bottom-0 left-1/4 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+			</div>
+
+			<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12 text-white">
+					<h2 class="text-5xl font-black mb-4">Ready to Commit?</h2>
+					<p class="text-xl text-white/90 max-w-2xl mx-auto">
+						Take our Accountability Readiness Quiz and join the waiting list for early access
+					</p>
+				</div>
+
+				<WaitlistForm client:load />
+
+				<!-- Urgency indicators -->
+				<div class="mt-12 flex flex-wrap justify-center gap-6 text-white">
+					<div class="flex items-center gap-2">
+						<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+						<span class="text-sm font-semibold">Launch in 74 days</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+						<span class="text-sm font-semibold">157 people on list</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<div class="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+						<span class="text-sm font-semibold">343 spots remaining</span>
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<!-- Footer -->
-		<footer class="border-t border-gray-200 py-8">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600">
-				<p>&copy; 2026 Accountability Bet. All rights reserved.</p>
+		<footer class="bg-gray-900 text-white py-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center">
+					<div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
+						Accountability Bet
+					</div>
+					<p class="text-gray-400 mb-6">Turn goals into money-backed commitments</p>
+					<div class="flex justify-center gap-8 text-sm text-gray-400">
+						<a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+						<a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+						<a href="#" class="hover:text-white transition-colors">Contact</a>
+					</div>
+					<p class="text-gray-500 text-sm mt-6">&copy; 2026 Accountability Bet. Made in Switzerland 🇨🇭</p>
+				</div>
 			</div>
 		</footer>
+
+		<style>
+			@keyframes gradient {
+				0%, 100% { background-position: 0% 50%; }
+				50% { background-position: 100% 50%; }
+			}
+
+			@keyframes gradient-x {
+				0%, 100% { background-position: 0% 50%; }
+				50% { background-position: 100% 50%; }
+			}
+
+			@keyframes blob {
+				0%, 100% { transform: translate(0px, 0px) scale(1); }
+				33% { transform: translate(30px, -50px) scale(1.1); }
+				66% { transform: translate(-20px, 20px) scale(0.9); }
+			}
+
+			.animate-gradient {
+				background-size: 200% 200%;
+				animation: gradient 15s ease infinite;
+			}
+
+			.animate-gradient-x {
+				background-size: 200% 200%;
+				animation: gradient-x 3s ease infinite;
+			}
+
+			.animate-blob {
+				animation: blob 7s infinite;
+			}
+
+			.animation-delay-2000 {
+				animation-delay: 2s;
+			}
+
+			.animation-delay-4000 {
+				animation-delay: 4s;
+			}
+
+			.glass-card {
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+			}
+
+			/* Scroll-triggered animations using CSS */
+			.scroll-fade-in {
+				opacity: 0;
+				transform: translateY(30px);
+				animation: scroll-fade-in linear forwards;
+				animation-timeline: view();
+				animation-range: entry 0% cover 30%;
+			}
+
+			@keyframes scroll-fade-in {
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.step-number {
+				animation: pulse-glow 2s ease-in-out infinite;
+			}
+
+			@keyframes pulse-glow {
+				0%, 100% {
+					box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+				}
+				50% {
+					box-shadow: 0 10px 50px rgba(139, 92, 246, 0.8);
+				}
+			}
+
+			body {
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+			}
+
+			/* Fallback for browsers without scroll-timeline support */
+			@supports not (animation-timeline: view()) {
+				.scroll-fade-in {
+					opacity: 1;
+					transform: translateY(0);
+					animation: none;
+				}
+			}
+
+			/* Accessibility: Respect reduced motion preferences */
+			@media (prefers-reduced-motion: reduce) {
+				* {
+					animation-duration: 0.01ms !important;
+					animation-iteration-count: 1 !important;
+					transition-duration: 0.01ms !important;
+				}
+			}
+
+			/* Mobile menu toggle (simplified) */
+			@media (max-width: 768px) {
+				nav {
+					display: none;
+				}
+			}
+		</style>
 	</body>
 </html>
