@@ -1,0 +1,201 @@
+---
+/**
+ * WaitlistForm Component
+ * Email capture form with validation, loading states, and Plausible tracking.
+ */
+
+interface Props {
+  class?: string;
+  variant?: 'hero' | 'inline' | 'footer';
+}
+
+const { class: className = '', variant = 'hero' } = Astro.props;
+
+const variantStyles = {
+  hero: 'max-w-md mx-auto lg:mx-0',
+  inline: 'max-w-lg mx-auto',
+  footer: 'max-w-sm',
+};
+---
+
+<div class={`waitlist-form ${variantStyles[variant]} ${className}`} data-variant={variant}>
+  <form id="waitlist-form" class="relative">
+    <div class="flex flex-col sm:flex-row gap-3">
+      <div class="flex-1 relative">
+        <input
+          type="email"
+          id="waitlist-email"
+          name="email"
+          required
+          placeholder="Enter your email"
+          class="w-full px-4 py-3.5 rounded-xl border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:border-white/50 focus:bg-white/20 transition-all"
+        />
+        <div id="email-error" class="absolute -bottom-6 left-0 text-red-300 text-sm hidden"></div>
+      </div>
+      <button
+        type="submit"
+        id="waitlist-submit"
+        class="px-6 py-3.5 bg-white text-purple-600 rounded-xl font-bold hover:shadow-lg hover:shadow-white/20 transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 flex items-center justify-center gap-2 min-w-[140px]"
+      >
+        <span id="submit-text">Join Waitlist</span>
+        <svg id="submit-spinner" class="animate-spin h-5 w-5 hidden" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      </button>
+    </div>
+  </form>
+
+  <!-- Success Message (hidden by default) -->
+  <div id="waitlist-success" class="hidden text-center py-4">
+    <div class="inline-flex items-center gap-2 bg-green-500/20 text-green-200 px-4 py-2 rounded-xl">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+      </svg>
+      <span id="success-message">Check your email to confirm your spot!</span>
+    </div>
+    <p id="position-message" class="text-white/80 text-sm mt-2"></p>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('waitlist-form') as HTMLFormElement;
+  const emailInput = document.getElementById('waitlist-email') as HTMLInputElement;
+  const submitBtn = document.getElementById('waitlist-submit') as HTMLButtonElement;
+  const submitText = document.getElementById('submit-text');
+  const submitSpinner = document.getElementById('submit-spinner');
+  const emailError = document.getElementById('email-error');
+  const successDiv = document.getElementById('waitlist-success');
+  const successMessage = document.getElementById('success-message');
+  const positionMessage = document.getElementById('position-message');
+
+  // Get attribution data from sessionStorage/localStorage
+  function getAttributionData() {
+    const data: Record<string, string | null> = {};
+
+    // Session storage (current visit)
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach((key) => {
+      data[key] = sessionStorage.getItem(key);
+    });
+
+    data.referrer = sessionStorage.getItem('referrer');
+    data.landing_page = window.location.pathname;
+
+    // Check for referral code in URL
+    const params = new URLSearchParams(window.location.search);
+    data.referred_by_code = params.get('ref');
+
+    return data;
+  }
+
+  // Track event to Plausible
+  function trackEvent(eventName: string, props: Record<string, string> = {}) {
+    if ((window as any).plausible) {
+      (window as any).plausible(eventName, { props });
+    }
+  }
+
+  // Show error
+  function showError(message: string) {
+    if (emailError) {
+      emailError.textContent = message;
+      emailError.classList.remove('hidden');
+    }
+    emailInput?.classList.add('border-red-400');
+  }
+
+  // Hide error
+  function hideError() {
+    emailError?.classList.add('hidden');
+    emailInput?.classList.remove('border-red-400');
+  }
+
+  // Set loading state
+  function setLoading(loading: boolean) {
+    if (submitBtn) submitBtn.disabled = loading;
+    if (submitText) submitText.textContent = loading ? 'Joining...' : 'Join Waitlist';
+    if (submitSpinner) submitSpinner.classList.toggle('hidden', !loading);
+  }
+
+  // Show success
+  function showSuccess(message: string, position?: number) {
+    form?.classList.add('hidden');
+    successDiv?.classList.remove('hidden');
+
+    if (successMessage) {
+      successMessage.textContent = message;
+    }
+
+    if (position && positionMessage) {
+      positionMessage.textContent = `You're #${position} on the waitlist!`;
+    }
+  }
+
+  // Handle form submission
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideError();
+
+    const email = emailInput?.value.trim();
+
+    // Basic validation
+    if (!email) {
+      showError('Please enter your email');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showError('Please enter a valid email');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const attributionData = getAttributionData();
+
+      const response = await fetch('/api/waitlist/join', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          ...attributionData,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Track success
+        trackEvent('Waitlist Signup', {
+          position: data.position?.toString() || 'unknown',
+          source: attributionData.utm_source || 'direct',
+        });
+
+        showSuccess(data.message || 'Check your email to confirm your spot!', data.position);
+      } else {
+        showError(data.error || 'Something went wrong. Please try again.');
+
+        // Track error
+        trackEvent('Waitlist Error', {
+          error: data.error || 'unknown',
+        });
+      }
+    } catch (err) {
+      console.error('Submission error:', err);
+      showError('Network error. Please try again.');
+
+      trackEvent('Waitlist Error', {
+        error: 'network_error',
+      });
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  // Clear error on input
+  emailInput?.addEventListener('input', hideError);
+</script>

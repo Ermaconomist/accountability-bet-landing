@@ -1,0 +1,78 @@
+---
+/**
+ * WaitlistCounter Component
+ * Displays live waitlist count with animation.
+ * Only shows if count > 100 (hides small numbers for social proof).
+ */
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div id="waitlist-counter" class={`waitlist-counter hidden ${className}`}>
+  <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+    <span class="relative flex h-2 w-2">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+    </span>
+    <span class="text-white/90 text-sm">
+      <span id="counter-value" class="font-bold tabular-nums">0</span> people on the waitlist
+    </span>
+  </div>
+</div>
+
+<script>
+  const counterContainer = document.getElementById('waitlist-counter');
+  const counterValue = document.getElementById('counter-value');
+
+  // Animate number counting up
+  function animateValue(element: HTMLElement, start: number, end: number, duration: number) {
+    const startTime = performance.now();
+
+    function update(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Ease out quad
+      const easeProgress = 1 - (1 - progress) * (1 - progress);
+      const current = Math.floor(start + (end - start) * easeProgress);
+
+      element.textContent = current.toLocaleString();
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // Fetch and display count
+  async function fetchCount() {
+    try {
+      const response = await fetch('/api/waitlist/count');
+      const data = await response.json();
+
+      if (data.success && data.count > 0) {
+        // Show the counter
+        counterContainer?.classList.remove('hidden');
+
+        // Animate the number
+        if (counterValue) {
+          animateValue(counterValue, 0, data.count, 1500);
+        }
+      }
+    } catch (err) {
+      console.error('Failed to fetch waitlist count:', err);
+    }
+  }
+
+  // Fetch on load
+  fetchCount();
+
+  // Optional: Refresh periodically (every 5 minutes)
+  // setInterval(fetchCount, 5 * 60 * 1000);
+</script>

@@ -1,5 +1,18 @@
 ---
 import '../styles/global.css';
+import WaitlistForm from '../components/WaitlistForm.astro';
+import WaitlistCounter from '../components/WaitlistCounter.astro';
+
+// Check URL params for routing
+const inviteCode = Astro.url.searchParams.get('invite_code');
+const refCode = Astro.url.searchParams.get('ref');
+const isInvitedUser = !!inviteCode;
+
+// Build app signup URL with invite code
+const appUrl = import.meta.env.APP_URL || 'https://app.accountabilitybet.ch';
+const signupUrl = inviteCode
+  ? `${appUrl}/signup?invite_code=${inviteCode}`
+  : `${appUrl}/signup`;
 ---
 
 <html lang="en">
@@ -114,18 +127,34 @@ import '../styles/global.css';
 							Finally achieve those fitness, career, and habit goals with real financial stakes.
 						</p>
 
-						<!-- CTA Buttons -->
-						<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-							<a href="https://app.accountabilitybet.ch/signup" class="group bg-white text-purple-600 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-white/30 transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-2">
-								Get Started Free
-								<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-								</svg>
-							</a>
-							<a href="#how-it-works" class="border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all text-center">
-								See How It Works
-							</a>
-						</div>
+						<!-- Dual-path CTA: Waitlist for general visitors, Accept Bet for invited users -->
+						{isInvitedUser ? (
+							<!-- Invited User Path -->
+							<div class="mb-8">
+								{refCode && (
+									<p class="text-white/80 text-sm mb-4">
+										You've been invited to join Accountability Bet!
+									</p>
+								)}
+								<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+									<a href={signupUrl} class="group bg-white text-purple-600 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-white/30 transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-2">
+										Accept the Bet
+										<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+										</svg>
+									</a>
+									<a href="#how-it-works" class="border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all text-center">
+										See How It Works
+									</a>
+								</div>
+							</div>
+						) : (
+							<!-- General Visitor Path: Waitlist -->
+							<div class="mb-8">
+								<WaitlistForm variant="hero" />
+								<WaitlistCounter class="mt-4" />
+							</div>
+						)}
 
 						<!-- Trust indicators -->
 						<div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-white/80 text-sm">
@@ -275,6 +304,14 @@ import '../styles/global.css';
 					<h2 class="text-4xl md:text-5xl font-extrabold mb-4">Why It Works</h2>
 					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
 						Money + social accountability keeps people committed when promises alone fail
+					</p>
+					<!-- Behavioral Science Citation -->
+					<p class="text-sm text-gray-500 mt-4 max-w-xl mx-auto">
+						Research shows people are 2x more motivated to avoid losses than to achieve gains.
+						<a href="https://en.wikipedia.org/wiki/Loss_aversion" target="_blank" rel="noopener noreferrer" class="text-purple-600 hover:underline">
+							Loss aversion (Kahneman & Tversky)
+						</a>
+						explains why financial stakes work so well.
 					</p>
 				</div>
 
@@ -634,20 +671,26 @@ import '../styles/global.css';
 			<div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 				<h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Ready to Commit?</h2>
 				<p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-					Start your first accountability bet today. It's free to create an account and your first bet.
+					Join the waitlist to be first in line when we launch. Put real money on your goals.
 				</p>
 
-				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-					<a href="https://app.accountabilitybet.ch/signup" class="group bg-white text-purple-600 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-white/30 transition-all hover:-translate-y-1 inline-flex items-center gap-2">
-						Create Free Account
-						<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-						</svg>
-					</a>
-					<a href="https://app.accountabilitybet.ch/login" class="border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all">
-						I Have an Account
-					</a>
-				</div>
+				{isInvitedUser ? (
+					<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+						<a href={signupUrl} class="group bg-white text-purple-600 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-white/30 transition-all hover:-translate-y-1 inline-flex items-center gap-2">
+							Accept the Bet
+							<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</a>
+						<a href="https://app.accountabilitybet.ch/login" class="border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all">
+							I Have an Account
+						</a>
+					</div>
+				) : (
+					<div class="max-w-md mx-auto mb-8">
+						<WaitlistForm variant="inline" />
+					</div>
+				)}
 
 				<p class="text-white/60 text-sm">
 					No credit card required • Free to start • Cancel anytime
